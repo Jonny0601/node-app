@@ -18,6 +18,7 @@
   "homepage": "https://github.com/Jonny0601/node-app#readme",
   "dependencies": {
     "express": "^4.14.0",
-    "ractive-engine": "^0.1.1"
+    "ractive-engine": "^0.1.1",
+    "superagent": "^2.2.0"
   }
 }

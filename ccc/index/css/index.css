@@ -1,0 +1,14 @@
+section{
+    overflow: hidden;
+    width: 100%;
+}
+
+article,aside{
+    float: left;
+    width: 50%;
+    background: yellow;
+}
+
+aside{
+    background: red
+}
