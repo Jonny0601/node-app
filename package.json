@@ -4,7 +4,8 @@
   "description": "nodejs 项目测试",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel ./ccc/*/js/main -d dev/ccc/*/js/main"
   },
   "repository": {
     "type": "git",
@@ -17,8 +18,11 @@
   },
   "homepage": "https://github.com/Jonny0601/node-app#readme",
   "dependencies": {
+    "body-parser": "^1.15.2",
+    "cookie-parser": "^1.4.3",
     "express": "^4.14.0",
+    "express-session": "^1.14.1",
     "ractive-engine": "^0.1.1",
     "superagent": "^2.2.0"
-  }
+  },
 }
