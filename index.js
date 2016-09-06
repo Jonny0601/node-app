@@ -2,6 +2,7 @@
 var express = require('express');
 var session = require('express-session');
 var cookieParser = require('cookie-parser');
+var bodyParser = require('body-Parser')
 var router = express.Router();
 var request = require('superagent');
 var path = require('path');
@@ -13,7 +14,7 @@ global.appRoot = __dirname;
 
 var app = express();
 app.use(express.static(path.join(appRoot,'ccc')));//静态文件托管
-
+app.use(bodyParser())
 app.use(cookieParser());
 app.use(session({
     secret: '12345',
@@ -25,9 +26,10 @@ app.use(session({
 
 
 app.all('*',(req,res,next)=>{
-    console.log('输出locals')
-    console.log(res.locals)
-    console.log('输出locals')
+    req.request = request;
+//    console.log('输出locals')
+//    console.log(req.request)
+//    console.log('输出locals')
     next('route')
 })
 
@@ -42,7 +44,6 @@ app.get('/',(req,res,next)=>{
 })
 
 require('./requireRouter')(__dirname,router,app)
-
 
 
 

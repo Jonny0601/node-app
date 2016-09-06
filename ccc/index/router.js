@@ -13,9 +13,14 @@ module.exports = function(router){
    
     
     router.get('/index/list',function(req,res,next){
-        res.render('index/views/list',{
-            list:[1,2,3,4,5,6,]
+        req.request.get('http://www.expressjs.com.cn/guide/error-handling.html')
+            .end(function(e,r){
+            console.log(r.text)
+            res.json(r.text)
         })
+//        res.render('index/views/list',{
+//            list:[1,2,3,4,5,6,]
+//        })
     })
     return router;
 }
